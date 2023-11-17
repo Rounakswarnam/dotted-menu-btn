@@ -1,0 +1,180 @@
+<html>
+    <head>
+        <title>Nevigation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>          
+        <style>
+body {
+    background-color: #081b29;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dots {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: transparent;   
+    display: grid;
+    grid-template-columns: 25px 25px 25px;
+    grid-auto-rows: 25px 25px 25px;
+    grid-gap: 7px;
+}
+
+.ele {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    border: none;
+    border-radius: 5px;
+    pointer-events: auto;
+    color: white;
+    display: grid;
+    place-items: center;
+    transform: translate(0,0) scale(1);
+    pointer-events: none;
+    box-shadow: none;
+    cursor: pointer;
+    transition: transform 0.5s, background 0.3s, border 0.3s, box-shadow 0.3s, color 0.3s;
+}
+.ele ion-icon {
+    opacity: 0;
+    transform: scale(0);
+    font-size: 100%;
+    transition: all 0.5s;
+}
+
+.ele.active {
+    background: #304255;
+    border: 1px solid white;
+    pointer-events: auto;
+    transition: transform 0.5s, background 0.3s, border 0.3s, box-shadow 0.3s, color 0.3s;
+}
+.ele.active ion-icon{
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s;
+}
+
+.ele.active:hover {
+    background: #081b29;
+    box-shadow: 0 0 20px #ffffff, 0 0 40px #ffffff;
+    color: yellow;
+    transition: transform 0.5s, background 0.3s, border 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+.dot1.active {transform: translate(-85px,-85px) scale(4); transition: transform 0.5s;}
+.dot2.active {transform: translate(0,-85px) scale(4); transition: transform 0.5s;}
+.dot3.active {transform: translate(85px,-85px) scale(4); transition: transform 0.5s;}
+.dot4.active {transform: translate(-85px,0) scale(4); transition: transform 0.5s;}
+.dot5.active {transform: translate(0,0) scale(4); transition: transform 0.5s;}
+.dot6.active {transform: translate(85px,0) scale(4); transition: transform 0.5s;}
+.dot7.active {transform: translate(-85px,85px) scale(4); transition: transform 0.5s;}
+.dot8.active {transform: translate(0,85px) scale(4); transition: transform 0.5s;}
+.dot9.active {transform: translate(85px,85px) scale(4); transition: transform 0.5s;}            
+        </style>
+    </head>
+    <body>
+        <div class="dots active">
+            <div class="dot1 ele" style="--i:5;"><ion-icon name="diamond-outline"></ion-icon></div>
+            <div class="dot2 ele" style="--i:1;"><ion-icon name="cube-outline"></ion-icon></div>
+            <div class="dot3 ele" style="--i:8;"><ion-icon name="document-text-outline"></ion-icon></div>
+            <div class="dot4 ele" style="--i:2;"><ion-icon name="paper-plane-outline"></ion-icon></div>
+            <div class="dot5 ele" style="--i:9;"><ion-icon name="close-outline"></ion-icon></div>
+            <div class="dot6 ele" style="--i:3;"><ion-icon name="options-outline"></div>
+            <div class="dot7 ele" style="--i:7;"><ion-icon name="prism-outline"></ion-icon></div>
+            <div class="dot8 ele" style="--i:4;"><ion-icon name="partly-sunny-outline"></ion-icon></div>
+            <div class="dot9 ele" style="--i:6;"><ion-icon name="image-outline"></ion-icon></div>
+        </div>        
+        <script>
+const parent = document.querySelector(".dots");
+const dot1 = document.querySelector(".dot1");
+const dot2 = document.querySelector(".dot2");
+const dot3 = document.querySelector(".dot3");
+const dot4 = document.querySelector(".dot4");
+const dot5 = document.querySelector(".dot5");
+const dot6 = document.querySelector(".dot6");
+const dot7 = document.querySelector(".dot7");
+const dot8 = document.querySelector(".dot8");
+const dot9 = document.querySelector(".dot9");
+
+parent.onclick = () => {
+    if (parent.classList.contains('active')) {
+        setTimeout(function() {
+            dot2.classList.add('active');
+        }, 100);
+        setTimeout(function() {
+            dot4.classList.add('active');
+        }, 200);
+        setTimeout(function() {
+            dot6.classList.add('active');
+        }, 300);
+        setTimeout(function() {
+            dot8.classList.add('active');
+        }, 400);
+        setTimeout(function() {
+            dot1.classList.add('active');
+        }, 500);
+        setTimeout(function() {
+            dot9.classList.add('active');
+        }, 600);
+        setTimeout(function() {
+            dot7.classList.add('active');
+        }, 700);
+        setTimeout(function() {
+            dot3.classList.add('active');
+        }, 800);
+        setTimeout(function() {
+            dot5.classList.add('active');
+        }, 900);
+        setTimeout(function() {
+            parent.classList.remove('active');
+        }, 1000);
+    }    
+};
+
+dot5.onclick = () => { 
+    setTimeout(function() {
+        dot5.classList.remove('active');
+    }, 100);
+    setTimeout(function() {
+        dot4.classList.remove('active');
+    }, 200);
+    setTimeout(function() {
+        dot6.classList.remove('active');
+    }, 300);
+    setTimeout(function() {
+        dot8.classList.remove('active');
+    }, 400);
+    setTimeout(function() {
+        dot1.classList.remove('active');
+    }, 500);
+    setTimeout(function() {
+        dot9.classList.remove('active');
+    }, 600);
+    setTimeout(function() {
+        dot7.classList.remove('active');
+    }, 700);
+    setTimeout(function() {
+        dot3.classList.remove('active');
+    }, 800);
+    setTimeout(function() {
+        dot2.classList.remove('active');
+    }, 950);
+    setTimeout(function() {
+        parent.classList.add('active');
+    }, 1000);
+};
+            
+        </script>
+    </body>
+</html>
